@@ -8,13 +8,5 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
 
-  def create
-  end
-
-
-  private
-    def todo_params
-      params.require(:todo).permit(:title, :description)
-    end
 
 end
