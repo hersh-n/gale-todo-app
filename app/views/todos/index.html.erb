@@ -1,7 +1,7 @@
 <h1>Todos</h1>
 
 
-<%= form_for Todo.new do |f| %>
+<%= form_for Todo.new, remote: true do |f| %>
   <%= label_tag(:title, "Title:") %>
   <%= f.text_field :title %></br>
 
@@ -17,20 +17,18 @@
 
 
 
-<% @todos.each do |todo| %>
-  <li><%= todo.title %></li>
-  <li><%= todo.description %></li>
-  <li><%= todo.priority_word %></li>
-  <%= link_to "edit", edit_todo_path(todo[:id]) %>
-  <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
-<% end %>
+
+<ul>
+  <%= render :partial => Todo.order(:priority) %>
+</ul>
+
 
 <% @completed_todos.each do |todo| %>
   <li><%= todo.title %></li>
   <li><%= todo.description %></li>
   <li><%= todo.priority_word %></li>
   <%= link_to "edit", edit_todo_path(todo[:id]) %>
-  <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
+  <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
 <% end %>
 
 

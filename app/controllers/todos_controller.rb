@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     @todos = Todo.where("status = 0").order(:priority)
@@ -11,8 +12,12 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.create todo_params
-     redirect_to action: 'index'
+    @todo = Todo.create(todo_params)
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {}
+    end
   end
 
   def edit
@@ -27,8 +32,14 @@ class TodosController < ApplicationController
 
   def destroy
 
-    Todo.find(params[:id]).destroy
-    redirect_to root_path
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.js {}
+    end
+
 
   end
 

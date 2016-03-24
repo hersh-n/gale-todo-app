@@ -1,0 +1,7 @@
+<li id="<%= todo.id %>">
+  <%= todo.title %>
+  <%= todo.description %>
+  <%= todo.priority_word %>
+  <%= link_to "edit", edit_todo_path(todo[:id]) %>
+  <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
+</li>
