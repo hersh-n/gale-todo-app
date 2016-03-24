@@ -1,7 +1,9 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.order(:priority)
+    @todos = Todo.where("status = 0").order(:priority)
+    @completed_todos = Todo.where("status = 1").order(:updated_at)
+
   end
 
   def new

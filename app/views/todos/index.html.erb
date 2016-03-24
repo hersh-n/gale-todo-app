@@ -17,6 +17,14 @@
   <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
 <% end %>
 
+<% @completed_todos.each do |todo| %>
+  <li><%= todo.title %></li>
+  <li><%= todo.description %></li>
+  <li><%= todo.priority_word %></li>
+  <%= link_to "edit", edit_todo_path(todo[:id]) %>
+  <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
+<% end %>
+
   </ul>
 </div>
 
