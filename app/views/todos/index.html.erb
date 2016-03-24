@@ -4,4 +4,5 @@
   <li><%= todo.title %></li>
   <li><%= todo.priority %></li>
   <%= link_to "edit", edit_todo_path(todo[:id]) %>
+  <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
 <% end %>
