@@ -2,5 +2,6 @@
 
 <% @todos.each do |todo| %>
   <li><%= todo.title %></li>
+  <li><%= todo.priority %></li>
   <%= link_to "edit", edit_todo_path(todo[:id]) %>
 <% end %>
