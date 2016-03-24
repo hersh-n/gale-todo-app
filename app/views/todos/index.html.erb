@@ -1,8 +1,22 @@
-<h1> Index Page! </h1>
+<h1>Todos</h1>
+
+
+<ul>
+  <a  href="/contacts/new">  <li id="bold" class="button">Add contact</li></a>
+</ul>
+
+
+<div id="contacts" class='contact_list'>
+  <ul>
 
 <% @todos.each do |todo| %>
   <li><%= todo.title %></li>
-  <li><%= todo.priority %></li>
+  <li><%= todo.description %></li>
+  <li><%= todo.priority_word %></li>
   <%= link_to "edit", edit_todo_path(todo[:id]) %>
   <%= link_to "delete", todo, method: :delete, data: { confirm: "Are You Sure?" }%>
 <% end %>
+
+  </ul>
+</div>
+
