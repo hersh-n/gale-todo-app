@@ -1,4 +1,5 @@
 <li id="<%= todo.id %>">
+  <%= link_to 'Mark Complete', status_todo_path(todo), method: :patch %>
   <%= todo.title %>
   <%= todo.description %>
   <%= todo.priority_word %>

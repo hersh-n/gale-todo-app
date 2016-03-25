@@ -3,7 +3,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.where("status = 0").order(:priority)
-    @completed_todos = Todo.where("status = 1").order(:updated_at)
+    @completed_todos = Todo.where("status = 1").order('updated_at DESC')
 
   end
 
@@ -29,6 +29,15 @@ class TodosController < ApplicationController
     @todo.update todo_params
     redirect_to action: 'index'
   end
+
+  def status
+    @todo = Todo.find(params[:id])
+    @todo.update_attribute(:status, 1)
+    redirect_to root_path, notice: "marked as complete"
+
+
+  end
+
 
   def destroy
 

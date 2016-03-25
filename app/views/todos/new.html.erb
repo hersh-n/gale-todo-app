@@ -10,6 +10,5 @@
   <%= label_tag(:priority, "Priority") %>
   <%= f.select :priority, [['High', 1],['Medium', 2 ],['Low', 3 ]] %>
 
-  <%= hidden_field_tag :status, value: 1 %>
   <%= f.submit "Create" %>
 <% end %>

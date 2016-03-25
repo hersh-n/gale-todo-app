@@ -24,11 +24,13 @@
 
 
 <% @completed_todos.each do |todo| %>
-  <li><%= todo.title %></li>
-  <li><%= todo.description %></li>
-  <li><%= todo.priority_word %></li>
-  <%= link_to "edit", edit_todo_path(todo[:id]) %>
-  <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
+  <li>
+    <%= todo.title %>
+    <%= todo.description %>
+    <%= todo.priority_word %>
+    <%= link_to "edit", edit_todo_path(todo[:id])%>
+    <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
+  </li>
 <% end %>
 
 
