@@ -1,36 +1,26 @@
 <h1>Todos</h1>
 
+<div class="new-todo-form"></div>
+<%= link_to "New todo", new_todo_path, remote: true, class: "new-todo-button button radius" %>
 
-<%= form_for Todo.new, remote: true do |f| %>
-  <%= label_tag(:title, "Title:") %>
-  <%= f.text_field :title %></br>
 
-  <%= label_tag(:description, "Description") %>
-  <%= f.text_area :description %></br>
-
-  <%= label_tag(:priority, "Priority") %>
-  <%= f.select :priority, [['High', 1],['Medium', 2 ],['Low', 3 ]] %>
-
-  <%= hidden_field_tag :status, value: 1 %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class='not-completed'>
+  <ul>
+  <% @todos.where("status = 0").order(:priority).each do |todo| %>
+  <%= render todo %>
+  <% end %>
+  </ul>
+</div>
 
 
 
+<ul id='completed'>
 
-<ul>
-  <%= render :partial => Todo.order(:priority) %>
+  <% @todos.where("status = 1").order('updated_at DESC').each do |todo|%>
+  <%= render todo %>
+  <% end %>
 </ul>
-
-
-<% @completed_todos.each do |todo| %>
-  <li>
-    <%= todo.title %>
-    <%= todo.description %>
-    <%= todo.priority_word %>
-    <%= link_to "edit", edit_todo_path(todo[:id])%>
-    <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
-  </li>
-<% end %>
-
-
+<!-- <ul>
+  <%= @completedtodos %>
+</ul>
+ -->

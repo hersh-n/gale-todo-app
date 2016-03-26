@@ -1,0 +1,3 @@
+
+$('form').hide();
+$('div#<%= dom_id(@todo) %>').replaceWith('<%= j render partial: "todo", locals: {todo: @todo} %>');

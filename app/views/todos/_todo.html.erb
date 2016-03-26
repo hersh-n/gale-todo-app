@@ -1,8 +1,10 @@
-<li id="<%= todo.id %>">
-  <%= link_to 'Mark Complete', status_todo_path(todo), method: :patch %>
+<li>
+<%= div_for todo do %>
+  <%= link_to 'Mark Complete', status_todo_path(todo), method: :patch, remote: true, id: 'mark-complete' %>
   <%= todo.title %>
   <%= todo.description %>
   <%= todo.priority_word %>
-  <%= link_to "edit", edit_todo_path(todo[:id]) %>
+  <%= link_to "edit", edit_todo_path(todo[:id]), remote: true %>
   <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
+<% end %>
 </li>
