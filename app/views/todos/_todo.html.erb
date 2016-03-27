@@ -30,7 +30,10 @@
     <div class='l-inline delete'>
     <%= link_to "", todo, :class => "fa fa-trash-o fa-5x", method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
     </div>
-    <div class='l-inline edit'>
+    <div class=
+    'l-inline edit <% unless todo.status == 0 %>
+      display-none
+      <%end %>'>
     <%= link_to "", edit_todo_path(todo), :class => "fa fa-pencil fa-5x", remote: true %>
     </div>
 
