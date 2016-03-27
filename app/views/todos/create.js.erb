@@ -1,5 +1,5 @@
 $('form').hide();
-$('.not-completed > ul').append("<%= j render partial: 'todo', locals: {todo: @todo} %>").sort();
+$('.not-completed > ul').append("<%= j render partial: 'todo', locals: {todo: @todo} %>");
 $('.new-todo-button').show();
 
 var $todo = $('#todo-ul'),
