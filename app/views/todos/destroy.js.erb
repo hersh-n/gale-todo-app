@@ -1,1 +1,2 @@
-$("li#<%= @todo.id %>").slideUp();
+
+$("div#<%= dom_id(@todo) %> ").parent().slideUp();
