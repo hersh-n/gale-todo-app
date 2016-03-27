@@ -21,12 +21,16 @@ li {
   list-style: none;
 }
 
-.todo {
+div > a:focus, div > a:hover{
+    text-decoration: none;
+}
+
+.todo-li {
   margin: 2em;
 
 }
 
-#todo-ul li h3, #todo-ul li h4 {
+#todo-ul li h3, #todo-ul li h4,#completed-todo-ul li h3, #completed-todo-ul li h4  {
   word-break: break-word;
   margin-left: 45px;
   display: block;
@@ -60,6 +64,10 @@ li {
 
   float: right;
 
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 

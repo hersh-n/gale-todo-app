@@ -1,19 +1,30 @@
-
-<li class='todo'>
+<li class='todo-li'>
   <%= div_for todo do %>
   <div>
     <% if todo.status == 0 %>
 
-    <%= link_to "", complete_path(todo), :class => "fa fa-square-o fa-5x", remote: true%>
+      <%= link_to "", complete_path(todo), :class => "fa fa-square-o fa-5x", remote: true%>
+    <% else %>
+
+      <a href="/" disabled="disabled"><i class="fa fa-check-square-o fa-5x"></i></a>
     <% end %>
-    <div class='todo-text l-inline '>
-    <h3 class='
-    <% if todo.status == 0 %>
-    <%= todo.priority_word %>
-    <%end %>'><%= todo.title %></h3>
-    <h4><%= todo.description %></h4>
+    <div class='l-inline todo-text '>
+    <h3 class=
+      '<% if todo.status == 0 %>
+        <%= todo.priority_word %>
+      <% else %>
+        completed
+      <%end %>'>
+      <%= todo.title %>
+    </h3>
+    <h4 class=
+      '<% unless todo.status == 0 %>
+      completed
+      <%end %>'>
+      <%= todo.description %>
+    </h4>
     </div>
-    <div class="priority l-inline">
+    <div class="l-inline priority ">
     <p class='display-none'><%= todo.priority_word %></p>
     </div>
     <div class='l-inline delete'>
@@ -25,4 +36,4 @@
 
   <% end %>
   </div>
-</li>
+  </li>

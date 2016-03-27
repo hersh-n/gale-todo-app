@@ -1,5 +1,5 @@
 
-$("div#<%= dom_id(@todo)  %> > form").replaceWith("<%= j (render(@todo)) %>");
+$("div#<%= dom_id(@todo)  %>").parent().replaceWith("<%= j (render(@todo)) %>");
 
 
 var $todo = $('#todo-ul'),

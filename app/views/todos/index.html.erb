@@ -1,33 +1,34 @@
-<div class='container'>
-<div class='row'>
-<div class='col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1'>
-
-<h1>Todos</h1>
-
+<ul>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1'>
 
 
-<div class="new-todo-form"></div>
-<%= link_to "New todo", new_todo_path, remote: true, class: "new-todo-button button radius" %>
+      <li class='todo-li text-center'><h1>Todos</h1></li>
 
+      <li class='todo-li text-center'>
+        <div class="new-todo-form"></div>
+      <%= link_to "New todo", new_todo_path, remote: true, class: "new-todo-button btn btn-primary" %>
 
-<div class='not-completed'>
-  <ul id='todo-ul'>
-  <% @todos.incomplete.order(:priority).each do |todo| %>
-  <%= render todo %>
-  <% end %>
-  </ul>
-</div>
+      </li>
+      <div class='not-completed'>
+        <ul id='todo-ul'>
+          <% @todos.incomplete.order(:priority).each do |todo| %>
+            <%= render todo %>
+          <% end %>
+        </ul>
+      </div>
 
+      <li class='todo-li text-center'><h1>Completed</h1></li>
+      <div class='completed'>
+        <ul id='completed-todo-ul'>
+          <% @todos.complete.order('updated_at DESC').each do |todo|%>
+            <%= render todo %>
+          <% end %>
+        </ul>
+      </div>
 
-<div class='completed'>
-  <ul>
-  <% @todos.complete.order('updated_at DESC').each do |todo|%>
-    <%= render todo %>
-  <% end %>
-  </ul>
-</div>
-
-</div>
-</div>
-
-</div>
+      </div>
+    </div>
+  </div>
+</ul>
