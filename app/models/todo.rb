@@ -1,6 +1,7 @@
 class Todo < ActiveRecord::Base
 
-
+scope :complete, -> { where(status: 1) }
+scope :incomplete, -> { where(status: 0) }
 
 
 
@@ -15,6 +16,10 @@ class Todo < ActiveRecord::Base
 
 # end
 
+
+def mark_complete!
+  self.update_attribute(:status, 1)
+end
 
 def priority_word
   if self.priority == 1

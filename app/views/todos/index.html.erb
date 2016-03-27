@@ -13,13 +13,13 @@
 </div>
 
 
-
-<ul id='completed'>
-
-  <% @todos.where("status = 1").order('updated_at DESC').each do |todo|%>
-  <%= render todo %>
+<div class='completed'>
+  <ul>
+  <% @todos.complete.each do |todo|%>
+    <%= render todo %>
   <% end %>
-</ul>
+  </ul>
+</div>
 <!-- <ul>
   <%= @completedtodos %>
 </ul>

@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :todos do
-    member do
-    patch :status
-    end
-  end
+  resources :todos
 
   root 'todos#index'
+  get '/status/:id', to: 'todos#complete', as: 'complete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

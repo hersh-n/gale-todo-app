@@ -2,7 +2,9 @@
 <li>
 <%= div_for todo do %>
   <div>
-  <%= link_to 'Mark Complete', status_todo_path(todo), method: :patch, remote: true, id: 'mark-complete' %>
+  <% if todo.status == 0 %>
+  <%= link_to 'Mark Complete', complete_path(todo), remote: true%>
+  <% end %>
   <%= todo.title %>
   <%= todo.description %>
   <%= todo.priority_word %>
