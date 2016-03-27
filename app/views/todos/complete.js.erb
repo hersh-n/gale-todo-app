@@ -1,4 +1,4 @@
 
 $('div#<%= dom_id(@todo) %>').parent().slideUp();
-$('.completed > ul').append("<%= j render partial: 'todo', locals: {todo: @todo} %>");
+$('.completed > ul').prepend("<%= j render partial: 'todo', locals: {todo: @todo} %>");
 $('div#<%= dom_id(@todo) %> > div').find('.todo-text').css('text-decoration', 'line-through');
