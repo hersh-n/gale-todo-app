@@ -5,8 +5,8 @@
 
 
 <div class='not-completed'>
-  <ul>
-  <% @todos.where("status = 0").order(:priority).each do |todo| %>
+  <ul id='todo-ul'>
+  <% @todos.incomplete.order(:priority).each do |todo| %>
   <%= render todo %>
   <% end %>
   </ul>
@@ -15,12 +15,8 @@
 
 <div class='completed'>
   <ul>
-  <% @todos.complete.each do |todo|%>
+  <% @todos.complete.order('updated_at DESC').each do |todo|%>
     <%= render todo %>
   <% end %>
   </ul>
 </div>
-<!-- <ul>
-  <%= @completedtodos %>
-</ul>
- -->

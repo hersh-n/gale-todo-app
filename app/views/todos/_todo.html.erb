@@ -8,7 +8,9 @@
   <div class='todo-text'><%= todo.title %>
   <%= todo.description %>
   </div>
-  <%= todo.priority_word %>
+  <div class="priority">
+  <p><%= todo.priority_word %></p>
+  </div>
   <%= link_to "edit", edit_todo_path(todo), remote: true %>
   <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
 <% end %>
