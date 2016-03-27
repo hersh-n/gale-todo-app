@@ -1,3 +1,4 @@
+debugger
 $('form').hide();
-$('.not-completed').append("<%= j render partial: 'todo', locals: {todo: @todo} %>");
+$('.not-completed > ul').append("<%= j render partial: 'todo', locals: {todo: @todo} %>");
 $('.new-todo-button').show();
