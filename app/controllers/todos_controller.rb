@@ -2,8 +2,6 @@ class TodosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
 
-
-
   def index
     @todos = Todo.all
     @completed_todos = Todo.where("status = 1").order('updated_at DESC')
