@@ -1,18 +1,28 @@
 
-<li>
-<%= div_for todo do %>
+<li class='todo'>
+  <%= div_for todo do %>
   <div>
-  <% if todo.status == 0 %>
-  <%= link_to 'Mark Complete', complete_path(todo), remote: true%>
+    <% if todo.status == 0 %>
+
+    <%= link_to "", complete_path(todo), :class => "fa fa-square-o fa-5x", remote: true%>
+    <% end %>
+    <div class='todo-text l-inline '>
+    <h3 class='
+    <% if todo.status == 0 %>
+    <%= todo.priority_word %>
+    <%end %>'><%= todo.title %></h3>
+    <h4><%= todo.description %></h4>
+    </div>
+    <div class="priority l-inline">
+    <p class='display-none'><%= todo.priority_word %></p>
+    </div>
+    <div class='l-inline delete'>
+    <%= link_to "", todo, :class => "fa fa-trash-o fa-5x", method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
+    </div>
+    <div class='l-inline edit'>
+    <%= link_to "", edit_todo_path(todo), :class => "fa fa-pencil fa-5x", remote: true %>
+    </div>
+
   <% end %>
-  <div class='todo-text'><%= todo.title %>
-  <%= todo.description %>
   </div>
-  <div class="priority">
-  <p><%= todo.priority_word %></p>
-  </div>
-  <%= link_to "edit", edit_todo_path(todo), remote: true %>
-  <%= link_to "delete", todo, method: :delete, remote: true, data: { confirm: "Are You Sure?" }%>
-<% end %>
-</div>
 </li>

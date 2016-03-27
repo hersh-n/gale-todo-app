@@ -13,5 +13,55 @@
  *= require_tree .
  *= require_self
  */
+.l-inline {
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+.todo {
+  margin: 2em;
+
+}
+
+#todo-ul li h3, #todo-ul li h4 {
+  word-break: break-word;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.High {
+
+  color:red;
+
+}
+
+.Medium {
+  color: yellow;
+}
+
+.Low {
+  color:orange;
+}
+
+.display-none {
+  display: none;
+}
+
+.edit, .delete {
+
+  float: right;
+
+}
+
+
 
 

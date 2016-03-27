@@ -1,12 +1,14 @@
 <%= form_for(@todo, remote: true) do |f| %>
   <%= label_tag(:title, "Title:") %>
-  <%= f.text_field :title %></br>
+  <%= f.text_field :title %>
 
   <%= label_tag(:description, "Description") %>
-  <%= f.text_area :description %></br>
+  <%= f.text_area :description %>
 
   <%= label_tag(:priority, "Priority") %>
   <%= f.select :priority, [['High', 1],['Medium', 2 ],['Low', 3 ]] %>
 
-  <%= f.submit "Create" %>
+
+
+  <%= f.submit "Confirm" %>
 <% end %>
