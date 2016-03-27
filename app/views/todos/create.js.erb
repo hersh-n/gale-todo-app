@@ -2,21 +2,10 @@ $('form').hide();
 $('.not-completed > ul').append("<%= j render partial: 'todo', locals: {todo: @todo} %>").sort();
 $('.new-todo-button').show();
 
+var $todo = $('#todo-ul'),
+  $todoli = $todo.children('li');
 
-// var mylist = $('#todo-ul');
-// var listitems = mylist.children('li').find('.priority').get();
-
-// listitems.sort(function(a, b) {
-//    return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
-// })
-// $.each(listitems, function(idx, itm) { mylist.append(itm); });
-
-
-
-var $people = $('#todo-ul'),
-  $peopleli = $people.children('li');
-
-$peopleli.sort(function(a,b){
+$todoli.sort(function(a,b){
   var an = $(a).find('.priority > p').text();
   var bn = $(b).find('.priority > p').text();
   if(an === "High"){
@@ -44,34 +33,6 @@ $peopleli.sort(function(a,b){
   return 0;
 });
 
-$peopleli.detach().appendTo($people);
+$todoli.detach().appendTo($todo);
 
 
-
-//         var $sort = this;
-//         var $list = $('#todo-ul');
-//         var $listLi = $('li',$list);
-//         $listLi.sort(function(a, b){
-//           var keyA
-//           var keyB
-//           if($(a).find('.priority').text() == 'high'){
-//             keyA = 1;
-//           } else if($(a).find('.priority').text() == 'medium'){
-//             keyA = 2;
-//           } else if($(a).find('.priority').text() == 'low'){
-//             keyA = 3;
-//           };
-
-//           if($(b).find('.priority').text() == 'high'){
-//             keyB = 1;
-//           } else if($(b).find('.priority').text() == 'medium'){
-//             keyB = 2;
-//           } else if($(b).find('.priority').text() == 'low'){
-//             keyB = 3;
-//           };
-//                 return (keyA > keyB) ? 1 : 0;
-//         });
-//         $.each($listLi, function(index, row){
-// document.body.appendChild(prettyPrint($listLi));
-//             $list.append(row);
-//         });
