@@ -1,5 +1,5 @@
 class Api::TodosController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token
 
   def index
     render json: Todo.all
@@ -11,7 +11,7 @@ class Api::TodosController < ApplicationController
   end
 
   def create
-    todo = Todo.new(item_params)
+    todo = Todo.new(todo_params)
     if todo.save
       render status: 200, json: {
         message: "Successfully created Todo.",
