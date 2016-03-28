@@ -1,4 +1,4 @@
-== README
+# Todo App
 
 
 ##### A simple AJAX Todo app, built with rails. Ability to create, edit, delete, and complete a todo. Todo list sorted by todo priority. The whole app is rendered through AJAX requests.
@@ -13,7 +13,7 @@ https://enigmatic-reef-28359.herokuapp.com/
 - 2 $ bundle
 - 3 $ rake db:setup
 - 4 $ rails s
-- 5 In a new terminal input the curl commands below(don't to replace the placeholder data)
+- 5 In a new terminal input the curl commands below(don't forget to replace the placeholder data)
 
 ## RESTful API cURL commands
 
