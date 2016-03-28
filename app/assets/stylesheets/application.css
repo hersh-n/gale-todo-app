@@ -21,6 +21,10 @@ li {
   list-style: none;
 }
 
+ul {
+  padding-left: 0px;
+}
+
 div > a:focus, div > a:hover{
     text-decoration: none;
 }
@@ -29,6 +33,10 @@ div > a:focus, div > a:hover{
   margin: 2em;
 
 }
+
+
+
+
 
 #todo-ul li h3, #todo-ul li h4,#completed-todo-ul li h3, #completed-todo-ul li h4  {
   word-break: break-word;
@@ -41,6 +49,11 @@ div > a:focus, div > a:hover{
   -o-transition: color 0.4s;
   transition: color 0.4s;
 }
+
+#todo-ul {
+  padding-left: 0px;
+}
+
 
 .High {
 
@@ -63,6 +76,7 @@ div > a:focus, div > a:hover{
 .edit, .delete {
 
   float: right;
+  margin-left: 1em;
 
 }
 
