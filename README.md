@@ -19,7 +19,7 @@ https://enigmatic-reef-28359.herokuapp.com/
 
 ### Create
 
-curl -i -H "Accept: application/json" -H"content-type: application/json" -X POST -d '{"title":"The title will go here", "description":"The title will go here", "priority":1}' http://localhost:3000/api/todos
+curl -i -H "Accept: application/json" -H"content-type: application/json" -X POST -d '{"title":"The title will go here", "description":"The description will go here", "priority":1}' http://localhost:3000/api/todos
 
 
 ### Delete
@@ -28,7 +28,7 @@ curl -i -H "Accept: application/json" -H"content-type: application/json" -X DELE
 
 ### Update
 
-curl  -i -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d "{\"title\":\"Updated Title\", \"description\":\"this\", \"priority\":1}" http://localhost:3000/api/todos/:id.json
+curl  -i -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d "{\"title\":\"Updated Title\", \"description\":\"Updated description\", \"priority\":1}" http://localhost:3000/api/todos/:id.json
 
 
 
